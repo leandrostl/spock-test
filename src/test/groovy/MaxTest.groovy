@@ -2,7 +2,7 @@ import spock.lang.Shared
 import spock.lang.Specification;
 
 class MaxTest extends Specification {
-	def "o maior valor entre dois números"() {
+	def "Verificar o maior valor entre dois números"() {
 		expect:
 		Math.max(a, b) == c
 

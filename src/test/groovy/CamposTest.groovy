@@ -5,18 +5,18 @@ class CamposTest extends Specification {
 	def campo = 5
 	@Shared campo2 = 3
 	
-	def "alterando o valor do campo"() {
+	def "Se alterar o valor do campo, deve ser verificável"() {
 		campo = 6
 		campo2 = 4
 		
 		expect:
-		campo2 == 4
 		campo == 6
+		campo2 == 4
 	}
 	
-	def "mantem o valor do campo inalterado"() {
+	def "Sem qualquer alteração, mantem o valor do campo alterado anteriormente"() {
 		expect:
-		campo2 == 4
 		campo == 5
+		campo2 == 4
 	}
 }
