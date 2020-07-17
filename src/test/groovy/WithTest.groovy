@@ -1,3 +1,4 @@
+import groovy.transform.ToString
 import spock.lang.Shared
 import spock.lang.Specification
 import spock.lang.Unroll
@@ -14,6 +15,7 @@ class WithTest extends Specification {
                     "Barbara Liskov"
             ]
 
+    @ToString
     static class PessoasImportanteDaTI {
         String nome
         String sexo
@@ -22,8 +24,7 @@ class WithTest extends Specification {
 
 
     def "Verificar se #pessoa.nome é uma mulher importante das ciências da computação"() {
-        expect:
-        with(pessoa) {
+        verifyAll(pessoa) {
             nome in mulheresImportantes
             sexo == 'F'
         }
